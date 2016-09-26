@@ -1,9 +1,5 @@
 ---
 
-- name: force server timezone
-  timezone:
-    name: "{{ timezone_name }}"
-
 - name: install apt packages
   apt:
     name:  "{{ item }}"
