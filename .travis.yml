@@ -6,7 +6,7 @@ addons:
     packages:
     - python-pip
 install:
-- pip install ansible>=2.2
+- pip install git+https://github.com/ansible/ansible.git
 - ansible --version
 - printf '[defaults]\nroles_path=../' >ansible.cfg
 script:
