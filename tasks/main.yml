@@ -21,6 +21,6 @@
     group: root
     mode: 0644
 
-- include: pip.yml
+- include: ./pip.yml
 
-- include: ntp.yml
+- include: ./ntp.yml
