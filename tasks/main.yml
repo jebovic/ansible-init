@@ -20,9 +20,3 @@
     owner: root
     group: root
     mode: 0644
-
-- name: include pip tasks
-  include: tasks/pip.yml
-
-- name: include ntp tasks
-  include: tasks/ntp.yml
