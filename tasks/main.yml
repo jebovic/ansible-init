@@ -21,6 +21,8 @@
     group: root
     mode: 0644
 
-- include: ./pip.yml
+- name: include pip tasks
+  include: tasks/pip.yml
 
-- include: ./ntp.yml
+- name: include ntp tasks
+  include: tasks/ntp.yml
