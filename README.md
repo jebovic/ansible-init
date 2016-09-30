@@ -1,6 +1,8 @@
 Init
 ====
 
+[![Build Status](https://travis-ci.org/jebovic/ansible-init.svg?branch=master)](https://travis-ci.org/jebovic/ansible-init)
+
 Default init role for needed stuff on all servers
 
 Role Variables
