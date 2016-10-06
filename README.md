@@ -9,12 +9,9 @@ Role Variables
 --------------
 
 ```
-# Pip configuration
-pip_download_url: https://bootstrap.pypa.io/get-pip.py
-pip_download_dest: /tmp
-pip_version: latest
-python: python
-pip: pip
+# timezone configuration
+update_timezone: yes
+timezone_name: Europe/Paris
 
 # Default apt packages to install
 init_apt_packages:
@@ -28,22 +25,29 @@ init_apt_packages:
   - sendmail-bin
   - sendmail
 
+# /etc/hosts configuration
+update_host_file: yes
+custom_hosts: []
+
+# Pip configuration
+pip_enabled: yes
+pip_download_url: https://bootstrap.pypa.io/get-pip.py
+pip_download_dest: /tmp
+pip_version: latest
+python: python
+pip: pip
+
 # Default pip packages to install
 init_pip_packages:
   - httpie
 
-# /etc/hosts configuration
-custom_hosts: []
-
 # ntp basic configuration
+ntp_enabled: yes
 ntp_servers:
   - 0.fr.pool.ntp.org
   - 1.fr.pool.ntp.org
   - 2.fr.pool.ntp.org
   - 3.fr.pool.ntp.org
-
-# timezone configuration
-timezone_name: Europe/Paris
 ```
 
 Example Playbook

@@ -4,7 +4,6 @@
   command: "{{ pip }} --version"
   ignore_errors: true
   changed_when: false
-  check_mode: no
   register: pip_is_installed
 
 - name: pip > download
@@ -27,7 +26,6 @@
   shell: "{{ pip }} --version | awk '{print $2}'"
   register: pip_installed_version
   changed_when: false
-  check_mode: no
   when: pip_version != None or pip_version != "LATEST"
 
 - name: pip > reinstall
@@ -41,7 +39,6 @@
   become: yes
   changed_when: pip_latest_output.stdout.find('Requirement already up-to-date') == -1
   when: pip_version == None or pip_version == "LATEST"
-
 
 - name: pip > install packages
   pip:
