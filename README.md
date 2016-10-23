@@ -8,7 +8,7 @@ Default init role for needed stuff on all servers
 Role Variables
 --------------
 
-```
+```yaml
 # timezone configuration
 update_timezone: yes
 timezone_name: Europe/Paris
@@ -53,11 +53,20 @@ ntp_servers:
 Example Playbook
 ----------------
 
+```yaml
+- hosts: servers
+  roles:
+     - { role: jebovic.init }
 ```
-    - hosts: servers
-      roles:
-         - { role: jebovic.init }
-```
+
+Tags
+----
+
+* timezone_config : only update server timezone
+* etc_hosts_config : only update /et/hosts file
+* ntp : configure and restart ntp
+* ntp_config : only update config and restart service
+* pip : install pip
 
 License
 -------

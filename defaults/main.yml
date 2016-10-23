@@ -6,6 +6,7 @@ timezone_name: Europe/Paris
 
 # Default apt packages to install
 init_apt_packages:
+  - apt-transport-https
   - vim
   - curl
   - wget

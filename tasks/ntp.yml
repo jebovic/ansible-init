@@ -11,10 +11,12 @@
     - ntp.conf
   notify:
     - restart ntp
+  tags: ntp_config
 
 - name: ntp > service start
   service:
     name:  "{{ item }}"
     state: started
+    enabled: yes
   with_items:
     - ntp
