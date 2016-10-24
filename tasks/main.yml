@@ -25,6 +25,10 @@
   when: update_host_file
   tags: etc_hosts_config
 
+- include: python.yml
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_version | version_compare('15.04', '<')
+  tags: python
+
 - include: pip.yml
   when: pip_enabled
   tags: pip

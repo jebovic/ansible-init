@@ -1,0 +1,17 @@
+---
+
+- name: python > add ubuntu ppa
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items: "{{ init_python_apt_repositories }}"
+
+- name: python > install apt packages
+  apt:
+    name:  "{{ item }}"
+    state:              latest
+    install_recommends: false
+    update_cache:       yes
+    cache_valid_time:   300
+  with_items: "{{ init_python_apt_packages }}"

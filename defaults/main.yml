@@ -21,6 +21,12 @@ init_apt_packages:
 update_host_file: yes
 custom_hosts: []
 
+# Python upgrade for ubuntu
+init_python_apt_repositories:
+  - ppa:fkrull/deadsnakes-python2.7
+init_python_apt_packages:
+  - python2.7
+
 # Pip configuration
 pip_enabled: yes
 pip_download_url: https://bootstrap.pypa.io/get-pip.py
