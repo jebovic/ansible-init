@@ -5,3 +5,4 @@
     - role_under_test
   vars:
     update_timezone: no
+    update_host_file: no
