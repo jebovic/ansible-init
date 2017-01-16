@@ -4,14 +4,21 @@
   apt_repository:
     repo: "{{ item }}"
     state: present
-    update_cache: yes
+    update_cache: no
   with_items: "{{ init_python_apt_repositories }}"
+  register: init_python_repo_installed
+
+- name: update apt cache
+  apt:
+    update_cache:       yes
+  when: init_python_repo_installed|changed
 
 - name: python > install apt packages
   apt:
     name:  "{{ item }}"
     state:              latest
-    install_recommends: false
+    install_recommends: no
     update_cache:       yes
-    cache_valid_time:   300
+    cache_valid_time:   86400
+  when: init_python_repo_installed|success
   with_items: "{{ init_python_apt_packages }}"
