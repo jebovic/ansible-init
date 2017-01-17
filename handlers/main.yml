@@ -2,5 +2,5 @@
 
 - name: restart ntp
   service:
-    name:  ntp
+    name: ntp
     state: restarted
